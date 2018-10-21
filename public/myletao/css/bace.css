@@ -1,0 +1,39 @@
+body {
+  background-color: #fff;
+  font-size: 14px;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+.mu-content {
+  background-color: #fff;
+}
+.header {
+  background-color: skyblue;
+}
+.header > .mui-title {
+  color: #fff;
+}
+.header > .mui-icon {
+  color: #fff;
+}
+.footer {
+  background-color: skyblue;
+}
+.footer > .mui-tab-item {
+  color: #fff;
+}
+.footer > .mui-tab-item.mui-active {
+  color: red;
+}
