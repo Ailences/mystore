@@ -14,13 +14,50 @@ body {
         width: 80px;
         height: 100%;
         float: left;
-        background-color: pink;
         position: relative;
+        .links {
+            background-color: #fff;
+            >a {
+                display: block;
+                height: 45px;
+                line-height: 45px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #e0e0e0;
+                border-right: 1px solid #e0e0e0;
+                font-size: 14px;
+            }.active {
+                background-color: #f5f5f5;
+                border-right: 1px solid transparent;
+            }
+        }
     }
     .category-right {
         margin-left: 90px;
         height: 100%;
         position: relative;
-        background-color: cyan;
+        .brand-list {
+            margin-top: 10px;
+            background-color: #fff;
+            li {
+                float: left;
+                width: 33.33%;
+                a {
+                    display: block;
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                    p{
+                        text-align: center;
+                    }
+                }
+            }
+            .noresult {
+                padding: 10px;
+                font-size: 14px;
+                color: #f20;
+            }
+        }
     }
 }
