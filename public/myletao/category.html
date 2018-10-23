@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./assets/fontAwesome/css/font-awesome.min.css">
     <script src="./assets/mui/js/mui.min.js"></script>
     <link rel="stylesheet" href="./css/category.css">
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./js/category.js"></script>
 </head>
 
 <body>
@@ -36,51 +38,41 @@
         </a>
     </nav>
     <div class="my-content">
-        <div class="cate-list">
+        <div class="category-left">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                    <div class="leftCate">
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                        123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                        123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                        123<br>123<br>
-                    </div>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
+                    123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
+                    123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
+                    123<br>123<br>
                 </div>
             </div>
         </div>
-        <div class="cont-list">
+        <div class="category-right">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                    <div class="rightCate">
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                        123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                        123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                        123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                        123<br>123<br>
-                    </div>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
+                    123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
+                    123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
+                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
+                    123<br>123<br>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        mui('.mui-scroll-wrapper').scroll({
-            deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-        });
-    </script>
 </body>
 
 </html>
