@@ -11,6 +11,7 @@
     <script src="./assets/mui/js/mui.min.js"></script>
     <link rel="stylesheet" href="./css/category.css">
     <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
     <script src="./js/category.js"></script>
 </head>
 
@@ -41,38 +42,48 @@
         <div class="category-left">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                    123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                    123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                    123<br>123<br>
+                    <div class="links" id="links">
+
+                    </div>
                 </div>
             </div>
         </div>
         <div class="category-right">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                    123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                    123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123<br>
-                    123<br>123<br>123<br>123 <br>123<br>123<br>123 <br>
-                    123<br>123<br>
+                    <ul class="brand-list mui-clearfix">
+
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+
+    <script id="category-first" type="text/template">
+        <!-- 一级分类模板 -->
+        <% for(var i = 0; i < result.length; i++) { %> 
+            <a href = "javascript:;" data-id="<%= result[i].id %>">
+                <%= result[i].categoryName %> 
+            </a>  
+        <% } %>
+    </script>
+
+    <script id="category-second" type="text/template">
+        <!-- 二级分类模板 -->
+
+        <% for(var i = 0; i < rows.length; i++) { %>
+        <li>
+            <a href="javascript:;">
+                <img src="<%= rows[i].brandLogo %>" alt="">
+                <p><%= rows[i].brandName %></p>
+            </a>
+        </li>
+        <% } %>
+
+        <% if(!rows.length) { %>
+            <div class="noresult">暂无数据</div>
+        <% } %>
+    </script>
 </body>
 
 </html>
