@@ -1,5 +1,23 @@
 $(function () {
+    var isEdit = parseInt(getPrarmsByUrl(location.href, 'isEdit'));
+    console.log(isEdit);
+    if (isEdit) {
+        // 编辑收货地址
+        $('.mui-title').html('编辑收货地址');
 
+        if (localStorage.getItem('editAddres')) {
+            var address = JSON.parse(localStorage.getItem('editAddres'));
+
+            var html = template('editTpl', address);
+            // console.log(html)
+            $('#editForm').html(html);
+        }
+    } else {
+        // 添加操作
+        var html = template('editTpl', {});
+
+        $('#editForm').html(html);
+    }
 
     // 添加省市区选择组件
 
@@ -44,24 +62,39 @@ $(function () {
             return;
         }
 
+        var data = {
+            address: city,
+            addressDetail: detailAddr,
+            recipients: username,
+            postcode: postCode
+        }
+
+        if (isEdit) {
+            // 编辑
+            var url = '/address/updateAddress';
+            data.id = address.id;
+        } else {
+            var url = '/address/addAddress';
+        }
+
         // 调用接口 添加收货地址
         $.ajax({
-            url: '/address/addAddress',
+            url: url,
             type: 'post',
-            data: {
-                address: city,
-                addressDetail: detailAddr,
-                recipients: username,
-                postcode: postCode
-            },
+            data: data,
             success: function (res) {
-                console.log(res);
+                // console.log(res);
                 // alert(1)
                 if (res.success) {
-                    mui.toast('地址修改成功');
+                    if (isEdit) {
+                        // 编辑
+                        mui.toast('地址编辑成功');
+                    } else {
+                        mui.toast('地址修改成功');
+                    }
                     setTimeout(function () {
                         location.href = "./address.html"
-                    },1000)
+                    }, 1000)
                 }
             }
         })

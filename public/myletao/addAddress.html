@@ -61,24 +61,27 @@
         </a>
     </nav>
     <div class="my-content">
-        <form class="mui-input-group">
-            <div class="mui-input-row">
-                <input name="username" type="text" placeholder="请输入收货人姓名">
-            </div>
-            <div class="mui-input-row">
-                <input name="postCode" type="text" placeholder="请输入邮政编码">
-            </div>
-            <div class="mui-input-row">
-                <input name="city" type="text" id="selectCity" placeholder="请选择省市区">
-            </div>
-            <div class="mui-input-row">
-                <input name="detailAddr" type="text" placeholder="请输入详细地址">
-            </div>
-            <div class="mui-button-row">
-                <button type="button" class="mui-btn mui-btn-primary" id="addAddress">确认</button>
-            </div>
+        <form class="mui-input-group" id="editForm">
+            
         </form>
     </div>
+    <script id="editTpl" type="text/template">
+        <div class="mui-input-row">
+            <input name="username" type="text" placeholder="请输入收货人姓名" value="<%= recipients %>">
+        </div>
+        <div class="mui-input-row">
+            <input name="postCode" type="text" placeholder="请输入邮政编码" value="<%= postCode %>">
+        </div>
+        <div class="mui-input-row">
+            <input name="city" type="text" id="selectCity" placeholder="请选择省市区" value="<%= address %>">
+        </div>
+        <div class="mui-input-row">
+            <input name="detailAddr" type="text" placeholder="请输入详细地址" value="<%= addressDetail %>">
+        </div>
+        <div class="mui-button-row">
+            <button type="button" class="mui-btn mui-btn-primary" id="addAddress">确认</button>
+        </div>
+    </script>
 </body>
 
 </html>
