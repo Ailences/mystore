@@ -64,15 +64,15 @@
     </div>
     <script id="addressTpl" type="text/template">
         <% for(var i = 0; i < result.length; i++) { %>
-            <li class="mui-table-view-cell mui-transitioning mui-selected">
-                <div class="mui-slider-right mui-disabled mui-selected">
-                    <a href="javascript:;" data-id="<%= result[i].id " class="edit-btn mui-btn mui-btn-blue">编辑</a>
-                    <a href="javascript:;" data-id="<%= result[i].id " class="delete-btn mui-btn mui-btn-red">删除</a>
+            <li class="mui-table-view-cell mui-media">
+                <div class="mui-slider-right mui-disabled">
+                    <a href="javascript:;" data-id="<%= result[i].id %>" class="edit-btn mui-btn mui-btn-blue">编辑</a>
+                    <a href="javascript:;" data-id="<%= result[i].id %>" class="delete-btn mui-btn mui-btn-red">删除</a>
                 </div>
                 <div class="mui-slider-handle">
-                    邮编<%=result[i].postCode %> &nbsp;&nbsp; 收货人<%=result[i].recipients %> 
+                    邮编<%= result[i].postCode %> &nbsp;&nbsp; 收货人<%= result[i].recipients %> 
                     <p class='mui-ellipsis'>
-                        <%=result[i].address %> <%=result[i].addressDetail %>
+                        <%= result[i].address %> <%= result[i].addressDetail %>
                     </p>
                 </div>
             </li>
