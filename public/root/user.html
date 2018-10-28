@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>乐淘-用户管理</title>
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/system.css">
-	<script src="assets/jquery/jquery.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<title>用户管理</title>
+	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/system.css">
+	<script src="./assets/jquery/jquery.min.js"></script>
+	<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./assets/artTemplate/template-native.js"></script>
 	<script src="js/common.js"></script>
+	<script src="./js/user.js"></script>
 </head>
+
 <body>
 	<div class="system">
 		<div class="aside">
@@ -53,40 +57,51 @@
 		</div>
 		<div class="main">
 			<div class="header">
-	            <nav class="navbar navbar-custom">
-	                <div class="navbar-header">
-	                    <a href="javascript:;" class="navbar-brand">
-	                        <i class="fa fa-navicon"></i>
-	                    </a>
-	                </div>
-	                <ul class="nav navbar-nav navbar-right">
-	                    <li>
-	                        <a href="javascript:;" class="login_out_bot">
-	                            <i class="fa fa-sign-out"></i> 退出
-	                        </a>
-	                    </li>
-	                </ul>
-	            </nav>
-	        </div>
-	        <div class="body">
-	        	<table class="table table-bordered">
-	        		<tr>
-	        			<th>用户名</th>
-	        			<th>电话</th>
-	        			<th>状态</th>
-	        			<th>操作</th>
-	        		</tr>
-	        		<tr>
-	        			<td>18500000000</td>
-	        			<td>18500000000</td>
-	        			<td>已启用</td>
-	        			<td>
-	        				<button type="button" class="btn btn-danger">禁用</button>
-	        			</td>
-	        		</tr>
-	        	</table>
-	        </div>
+				<nav class="navbar navbar-custom">
+					<div class="navbar-header">
+						<a href="javascript:;" class="navbar-brand">
+							<i class="fa fa-navicon"></i>
+						</a>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="javascript:;" id="login-out" class="login_out_bot">
+								<i class="fa fa-sign-out"></i> 退出
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="body">
+				<table class="table table-bordered" id="user-box">
+
+				</table>
+			</div>
 		</div>
 	</div>
+	<script id="userTpl" type="text/template">
+		<tr>
+			<th>用户名</th>
+			<th>电话</th>
+			<th>状态</th>
+			<th>操作</th>
+		</tr>
+		<% for(var i = 0; i < rows.length; i++) { %>
+		<tr>
+			<td><%= rows[i].username %></td>
+			<td><%= rows[i].mobile %></td>
+			<td><%= rows[i].isDelete ? '已启用' : '已禁用' %></td>
+			<td>
+				<button type="button" 
+					class="btn edit-btn <%= rows[i].isDelete ? 'btn-danger' : 'btn-success' %>"
+					data-isDelete="<%= rows[i].isDelete %>" 
+					data-id="<%= rows[i].id %>" >
+					<%= rows[i].isDelete ? '禁用' : '启用' %>
+				</button>
+			</td>
+		</tr>
+		<% } %>
+	</script>
 </body>
+
 </html>

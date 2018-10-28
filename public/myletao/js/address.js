@@ -24,7 +24,7 @@ $(function () {
     $('#addressBox').on('click', '.delete-btn', function () {
         // 获取要删除的地址对应的id
         var id = $(this).data('id');
-        // var id = this.getAttribut\\e('data-id');
+        // var id = this.getAttribute('data-id');
         // 获取对应的li 元素
         var li = $(this).parent().parent()[0];
         // var li = this.parentNode.parentNode;
